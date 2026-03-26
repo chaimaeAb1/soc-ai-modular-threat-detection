@@ -40,6 +40,7 @@ data/                         # Datasets
 models/                       # Trained ML models
 tests/                        # Attack simulation
 ```
+![Dashboard](docs/arb.png)
 
 ---
 
@@ -128,7 +129,7 @@ docker-compose up -d
 
 ---
 
-## 📊 Results
+##  Results
 
 ![Dashboard](docs/dashboard.png)
 
