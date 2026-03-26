@@ -25,6 +25,7 @@ Log Tailer → Collector → Anomaly Detector → Analyzer →
 Trust Calibration → MITRE Mapper → XAI → Responder → Dashboard
 ```
 
+
 ---
 
 ##  Project Structure
@@ -40,7 +41,7 @@ data/                         # Datasets
 models/                       # Trained ML models
 tests/                        # Attack simulation
 ```
-![Dashboard](docs/arb.png)
+![arborescence](docs/Arb.png)
 
 ---
 
