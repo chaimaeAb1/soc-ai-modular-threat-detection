@@ -24,6 +24,7 @@ This project implements a **modular AI-based SOC architecture** integrating:
 Log Tailer → Collector → Anomaly Detector → Analyzer → 
 Trust Calibration → MITRE Mapper → XAI → Responder → Dashboard
 ```
+![architecture](docs/architecture.png)
 
 
 ---
