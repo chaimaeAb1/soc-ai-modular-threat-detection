@@ -1,0 +1,173 @@
+version: '3.8'
+
+# Docker Compose pour Atelier B - Architecture Distribuée
+# Lance Kafka + Zookeeper pour tests de résilience
+
+services:
+  # Zookeeper (requis pour Kafka)
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    container_name: soc-zookeeper
+    hostname: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+      ZOOKEEPER_LOG4J_ROOT_LOGLEVEL: WARN
+    volumes:
+      - zookeeper-data:/var/lib/zookeeper/data
+      - zookeeper-log:/var/lib/zookeeper/log
+    networks:
+      - soc-network
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "2181"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Kafka Broker
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: soc-kafka
+    hostname: kafka
+    depends_on:
+      zookeeper:
+        condition: service_healthy
+    ports:
+      - "9092:9092"
+      - "9093:9093"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      
+      # Listeners
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,PLAINTEXT_HOST://0.0.0.0:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:9093
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      
+      # Topics auto-creation
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_NUM_PARTITIONS: 3
+      KAFKA_DEFAULT_REPLICATION_FACTOR: 1
+      
+      # Performance & Résilience
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_MIN_INSYNC_REPLICAS: 1
+      
+      # Logging
+      KAFKA_LOG4J_ROOT_LOGLEVEL: WARN
+      KAFKA_LOG4J_LOGGERS: "kafka.controller=WARN,kafka.producer.async.DefaultEventHandler=WARN,state.change.logger=WARN"
+      
+      # Retention
+      KAFKA_LOG_RETENTION_HOURS: 24
+      KAFKA_LOG_RETENTION_BYTES: 1073741824  # 1GB
+      KAFKA_LOG_SEGMENT_BYTES: 536870912     # 512MB
+    volumes:
+      - kafka-data:/var/lib/kafka/data
+    networks:
+      - soc-network
+    healthcheck:
+      test: ["CMD", "kafka-broker-api-versions", "--bootstrap-server", "localhost:9092"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+  # Kafka UI (optionnel - pour visualisation)
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: soc-kafka-ui
+    depends_on:
+      kafka:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: soc-cluster
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
+      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
+      DYNAMIC_CONFIG_ENABLED: "true"
+    networks:
+      - soc-network
+    restart: unless-stopped
+
+  # Init container - Création des topics
+  kafka-init:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: soc-kafka-init
+    depends_on:
+      kafka:
+        condition: service_healthy
+    networks:
+      - soc-network
+    command: >
+      bash -c "
+        echo 'Attente de Kafka...'
+        sleep 10
+        
+        echo 'Création des topics SOC...'
+        
+        kafka-topics --create --if-not-exists \
+          --bootstrap-server kafka:9092 \
+          --topic events_raw \
+          --partitions 3 \
+          --replication-factor 1 \
+          --config retention.ms=86400000
+        
+        kafka-topics --create --if-not-exists \
+          --bootstrap-server kafka:9092 \
+          --topic events_to_analyze \
+          --partitions 3 \
+          --replication-factor 1 \
+          --config retention.ms=86400000
+        
+        kafka-topics --create --if-not-exists \
+          --bootstrap-server kafka:9092 \
+          --topic decisions \
+          --partitions 3 \
+          --replication-factor 1 \
+          --config retention.ms=86400000
+        
+        kafka-topics --create --if-not-exists \
+          --bootstrap-server kafka:9092 \
+          --topic alerts \
+          --partitions 1 \
+          --replication-factor 1 \
+          --config retention.ms=604800000
+        
+        echo 'Topics créés avec succès!'
+        kafka-topics --list --bootstrap-server kafka:9092
+      "
+    restart: "no"
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:8.15.0
+    container_name: soc-filebeat
+    user: root
+    volumes:
+      - /var/log:/hostfs/var/log:ro          # Accès aux vrais logs de la VM
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+    networks:
+      - soc-network
+    depends_on:
+      kafka:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  zookeeper-data:
+    driver: local
+  zookeeper-log:
+    driver: local
+  kafka-data:
+    driver: local
+
+networks:
+  soc-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

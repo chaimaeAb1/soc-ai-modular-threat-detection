@@ -1,0 +1,501 @@
+message,ip_source,severity,is_anomaly,msg_length,suspicious_keywords,ip_hash,severity_numeric,http_code_score,attack_patterns,special_chars_ratio,word_count
+Connection established from guest,10.0.125.42,low,0,33.0,0.0,0.553,0.25,0.0,0.0,0.0,4.0
+Suspicious activity: admin unauthorized access attempts,203.0.113.234,critical,1,55.0,2.0,0.182,1.0,0.0,0.0,0.0,6.0
+User alice logged in successfully,10.0.63.250,medium,0,33.0,0.0,0.165,0.5,0.0,0.0,0.0,5.0
+Session started for user admin,10.0.116.198,low,0,30.0,0.0,0.235,0.25,0.0,0.0,0.0,5.0
+Session started for user charlie,10.0.57.7,low,0,32.0,0.0,0.846,0.25,0.0,0.0,0.0,5.0
+nmap SYN scan detected from charlie,203.0.113.146,critical,1,35.0,1.0,0.355,1.0,0.0,0.6,0.0,6.0
+GET /../../../etc/passwd HTTP/1.1 403,203.0.113.225,high,1,37.0,0.0,0.924,0.75,0.8,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.172.27,medium,0,28.0,0.0,0.643,0.5,0.1,0.0,0.0,4.0
+User root logged in successfully,10.0.36.156,low,0,32.0,0.0,0.968,0.25,0.0,0.0,0.0,5.0
+Session started for user alice,10.0.236.98,medium,0,30.0,0.0,0.111,0.5,0.0,0.0,0.0,5.0
+Session started for user guest,10.0.81.179,low,0,30.0,0.0,0.724,0.25,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.101.184,medium,0,28.0,0.0,0.374,0.5,0.1,0.0,0.0,4.0
+Session started for user charlie,10.0.35.12,low,0,32.0,0.0,0.446,0.25,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.125.42,medium,0,28.0,0.0,0.553,0.5,0.1,0.0,0.0,4.0
+User charlie logged in successfully,10.0.111.60,medium,0,35.0,0.0,0.067,0.5,0.0,0.0,0.0,5.0
+Session started for user admin,10.0.172.27,low,0,30.0,0.0,0.643,0.25,0.0,0.0,0.0,5.0
+Port scan detected: guest ports scanned,203.0.113.242,high,1,39.0,1.0,0.597,0.75,0.0,0.3,0.0,6.0
+Connection established from alice,10.0.101.184,medium,0,33.0,0.0,0.374,0.5,0.0,0.0,0.0,4.0
+Connection established from charlie,10.0.44.152,low,0,35.0,0.0,0.605,0.25,0.0,0.0,0.0,4.0
+SQL injection attempt: ' OR '1'='1 from root,203.0.113.146,high,1,44.0,1.0,0.355,0.75,0.0,0.3,0.09090909090909091,8.0
+Session started for user alice,10.0.148.253,low,0,30.0,0.0,0.425,0.25,0.0,0.0,0.0,5.0
+Connection established from guest,10.0.125.42,low,0,33.0,0.0,0.553,0.25,0.0,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.189.91,low,0,28.0,0.0,0.497,0.25,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.148.253,medium,0,28.0,0.0,0.425,0.5,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.148.253,low,0,28.0,0.0,0.425,0.25,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.166.216,low,0,28.0,0.0,0.814,0.25,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.40.219,medium,0,28.0,0.0,0.054,0.5,0.1,0.0,0.0,4.0
+User root logged in successfully,10.0.142.208,medium,0,32.0,0.0,0.676,0.5,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.87.137,low,0,28.0,0.0,0.131,0.25,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.166.216,low,0,28.0,0.0,0.814,0.25,0.1,0.0,0.0,4.0
+nmap SYN scan detected from bob,203.0.113.17,high,1,31.0,1.0,0.671,0.75,0.0,0.6,0.0,6.0
+SQL injection attempt: ' OR '1'='1 from root,203.0.113.184,high,1,44.0,1.0,0.514,0.75,0.0,0.3,0.09090909090909091,8.0
+Session started for user charlie,10.0.36.156,low,0,32.0,0.0,0.968,0.25,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.51.98,low,0,28.0,0.0,0.053,0.25,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.216.88,low,0,28.0,0.0,0.258,0.25,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.138.254,low,0,28.0,0.0,0.711,0.25,0.1,0.0,0.0,4.0
+Multiple failed login attempts from bob,203.0.113.55,critical,1,39.0,1.0,0.647,1.0,0.0,0.0,0.0,6.0
+Session started for user charlie,10.0.216.9,medium,0,32.0,0.0,0.471,0.5,0.0,0.0,0.0,5.0
+Session started for user guest,10.0.136.180,low,0,30.0,0.0,0.977,0.25,0.0,0.0,0.0,5.0
+GET /../../../etc/passwd HTTP/1.1 403,203.0.113.69,high,1,37.0,0.0,0.035,0.75,0.8,0.0,0.0,4.0
+User admin logged in successfully,10.0.214.57,medium,0,33.0,0.0,0.501,0.5,0.0,0.0,0.0,5.0
+Session started for user bob,10.0.193.21,low,0,28.0,0.0,0.635,0.25,0.0,0.0,0.0,5.0
+Session started for user admin,10.0.116.198,medium,0,30.0,0.0,0.235,0.5,0.0,0.0,0.0,5.0
+Session started for user guest,10.0.193.21,medium,0,30.0,0.0,0.635,0.5,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.87.137,medium,0,28.0,0.0,0.131,0.5,0.1,0.0,0.0,4.0
+Session started for user guest,10.0.216.9,low,0,30.0,0.0,0.471,0.25,0.0,0.0,0.0,5.0
+Port scan detected: charlie ports scanned,203.0.113.234,critical,1,41.0,1.0,0.182,1.0,0.0,0.3,0.0,6.0
+GET /api/status HTTP/1.1 200,10.0.47.98,medium,0,28.0,0.0,0.983,0.5,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.57.7,low,0,28.0,0.0,0.846,0.25,0.1,0.0,0.0,4.0
+Session started for user charlie,10.0.110.246,medium,0,32.0,0.0,0.291,0.5,0.0,0.0,0.0,5.0
+Session started for user root,10.0.172.27,low,0,29.0,0.0,0.643,0.25,0.0,0.0,0.0,5.0
+Session started for user guest,10.0.3.195,low,0,30.0,0.0,0.045,0.25,0.0,0.0,0.0,5.0
+User guest logged in successfully,10.0.111.60,low,0,33.0,0.0,0.067,0.25,0.0,0.0,0.0,5.0
+Connection established from alice,10.0.44.152,medium,0,33.0,0.0,0.605,0.5,0.0,0.0,0.0,4.0
+Connection established from root,10.0.114.36,low,0,32.0,0.0,0.588,0.25,0.0,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.107.172,low,0,28.0,0.0,0.588,0.25,0.1,0.0,0.0,4.0
+Connection established from guest,10.0.22.187,low,0,33.0,0.0,0.253,0.25,0.0,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.57.7,low,0,28.0,0.0,0.846,0.25,0.1,0.0,0.0,4.0
+User guest logged in successfully,10.0.193.21,medium,0,33.0,0.0,0.635,0.5,0.0,0.0,0.0,5.0
+Session started for user guest,10.0.135.207,medium,0,30.0,0.0,0.083,0.5,0.0,0.0,0.0,5.0
+Connection established from bob,10.0.36.156,medium,0,31.0,0.0,0.968,0.5,0.0,0.0,0.0,4.0
+Connection established from admin,10.0.49.92,low,0,33.0,0.0,0.915,0.25,0.0,0.0,0.0,4.0
+Connection established from bob,10.0.51.98,low,0,31.0,0.0,0.053,0.25,0.0,0.0,0.0,4.0
+SQL injection attempt: ' OR '1'='1 from admin,203.0.113.103,critical,1,45.0,1.0,0.447,1.0,0.0,0.3,0.08888888888888889,8.0
+Suspicious activity: guest unauthorized access attempts,203.0.113.146,high,1,55.0,2.0,0.355,0.75,0.0,0.0,0.0,6.0
+Session started for user charlie,10.0.185.148,medium,0,32.0,0.0,0.31,0.5,0.0,0.0,0.0,5.0
+Connection established from alice,10.0.111.60,medium,0,33.0,0.0,0.067,0.5,0.0,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.229.151,low,0,28.0,0.0,0.492,0.25,0.1,0.0,0.0,4.0
+Failed password for invalid user admin from 203.0.113.103 port 52341 ssh2,203.0.113.103,critical,1,73.0,2.0,0.447,1.0,0.0,0.0,0.0,11.0
+GET /api/status HTTP/1.1 200,10.0.87.137,medium,0,28.0,0.0,0.131,0.5,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.125.42,medium,0,28.0,0.0,0.553,0.5,0.1,0.0,0.0,4.0
+Session started for user bob,10.0.116.198,medium,0,28.0,0.0,0.235,0.5,0.0,0.0,0.0,5.0
+Port scan detected: root ports scanned,203.0.113.242,critical,1,38.0,1.0,0.597,1.0,0.0,0.3,0.0,6.0
+Connection established from guest,10.0.111.60,low,0,33.0,0.0,0.067,0.25,0.0,0.0,0.0,4.0
+Failed password for invalid user guest from 203.0.113.103 port 52341 ssh2,203.0.113.103,critical,1,73.0,2.0,0.447,1.0,0.0,0.0,0.0,11.0
+Session started for user root,10.0.22.187,medium,0,29.0,0.0,0.253,0.5,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.36.156,medium,0,28.0,0.0,0.968,0.5,0.1,0.0,0.0,4.0
+User charlie logged in successfully,10.0.52.174,medium,0,35.0,0.0,0.644,0.5,0.0,0.0,0.0,5.0
+User bob logged in successfully,10.0.116.198,medium,0,31.0,0.0,0.235,0.5,0.0,0.0,0.0,5.0
+Session started for user bob,10.0.229.151,low,0,28.0,0.0,0.492,0.25,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.216.9,low,0,28.0,0.0,0.471,0.25,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.112.176,medium,0,28.0,0.0,0.419,0.5,0.1,0.0,0.0,4.0
+Multiple failed login attempts from charlie,203.0.113.55,high,1,43.0,1.0,0.647,0.75,0.0,0.0,0.0,6.0
+GET /index.html HTTP/1.1 200,10.0.87.137,medium,0,28.0,0.0,0.131,0.5,0.1,0.0,0.0,4.0
+Connection established from alice,10.0.176.155,medium,0,33.0,0.0,0.096,0.5,0.0,0.0,0.0,4.0
+Port scan detected: alice ports scanned,203.0.113.184,critical,1,39.0,1.0,0.514,1.0,0.0,0.3,0.0,6.0
+GET /api/status HTTP/1.1 200,10.0.57.7,medium,0,28.0,0.0,0.846,0.5,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.142.208,medium,0,28.0,0.0,0.676,0.5,0.1,0.0,0.0,4.0
+User root logged in successfully,10.0.49.92,low,0,32.0,0.0,0.915,0.25,0.0,0.0,0.0,5.0
+User guest logged in successfully,10.0.135.207,low,0,33.0,0.0,0.083,0.25,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.125.42,medium,0,28.0,0.0,0.553,0.5,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.235.138,medium,0,28.0,0.0,0.869,0.5,0.1,0.0,0.0,4.0
+Port scan detected: root ports scanned,203.0.113.17,critical,1,38.0,1.0,0.671,1.0,0.0,0.3,0.0,6.0
+GET /index.html HTTP/1.1 200,10.0.13.144,low,0,28.0,0.0,0.998,0.25,0.1,0.0,0.0,4.0
+nmap SYN scan detected from guest,203.0.113.146,high,1,33.0,1.0,0.355,0.75,0.0,0.6,0.0,6.0
+User alice logged in successfully,10.0.40.219,low,0,33.0,0.0,0.054,0.25,0.0,0.0,0.0,5.0
+User root logged in successfully,10.0.142.40,low,0,32.0,0.0,0.838,0.25,0.0,0.0,0.0,5.0
+Connection established from root,10.0.214.57,medium,0,32.0,0.0,0.501,0.5,0.0,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.22.187,low,0,28.0,0.0,0.253,0.25,0.1,0.0,0.0,4.0
+Session started for user root,10.0.142.40,medium,0,29.0,0.0,0.838,0.5,0.0,0.0,0.0,5.0
+Session started for user guest,10.0.15.24,medium,0,30.0,0.0,0.103,0.5,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.142.208,low,0,28.0,0.0,0.676,0.25,0.1,0.0,0.0,4.0
+Session started for user charlie,10.0.81.179,medium,0,32.0,0.0,0.724,0.5,0.0,0.0,0.0,5.0
+User bob logged in successfully,10.0.166.216,low,0,31.0,0.0,0.814,0.25,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.150.213,low,0,28.0,0.0,0.661,0.25,0.1,0.0,0.0,4.0
+User root logged in successfully,10.0.235.138,medium,0,32.0,0.0,0.869,0.5,0.0,0.0,0.0,5.0
+nmap SYN scan detected from alice,203.0.113.146,critical,1,33.0,1.0,0.355,1.0,0.0,0.6,0.0,6.0
+User guest logged in successfully,10.0.136.180,low,0,33.0,0.0,0.977,0.25,0.0,0.0,0.0,5.0
+nmap SYN scan detected from admin,203.0.113.17,critical,1,33.0,1.0,0.671,1.0,0.0,0.6,0.0,6.0
+GET /index.html HTTP/1.1 200,10.0.110.246,medium,0,28.0,0.0,0.291,0.5,0.1,0.0,0.0,4.0
+Failed password for invalid user charlie from 203.0.113.225 port 52341 ssh2,203.0.113.225,high,1,75.0,2.0,0.924,0.75,0.0,0.0,0.0,11.0
+Session started for user admin,10.0.166.216,low,0,30.0,0.0,0.814,0.25,0.0,0.0,0.0,5.0
+User root logged in successfully,10.0.216.88,medium,0,32.0,0.0,0.258,0.5,0.0,0.0,0.0,5.0
+Session started for user admin,10.0.135.207,medium,0,30.0,0.0,0.083,0.5,0.0,0.0,0.0,5.0
+Multiple failed login attempts from bob,203.0.113.17,high,1,39.0,1.0,0.671,0.75,0.0,0.0,0.0,6.0
+Session started for user alice,10.0.112.176,medium,0,30.0,0.0,0.419,0.5,0.0,0.0,0.0,5.0
+Session started for user alice,10.0.51.98,low,0,30.0,0.0,0.053,0.25,0.0,0.0,0.0,5.0
+GET /../../../etc/passwd HTTP/1.1 403,203.0.113.234,critical,1,37.0,0.0,0.182,1.0,0.8,0.0,0.0,4.0
+Session started for user root,10.0.44.152,medium,0,29.0,0.0,0.605,0.5,0.0,0.0,0.0,5.0
+SQL injection attempt: ' OR '1'='1 from admin,203.0.113.103,high,1,45.0,1.0,0.447,0.75,0.0,0.3,0.08888888888888889,8.0
+Suspicious activity: root unauthorized access attempts,203.0.113.103,high,1,54.0,2.0,0.447,0.75,0.0,0.0,0.0,6.0
+Session started for user bob,10.0.13.144,medium,0,28.0,0.0,0.998,0.5,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.142.117,medium,0,28.0,0.0,0.824,0.5,0.1,0.0,0.0,4.0
+Connection established from admin,10.0.3.195,medium,0,33.0,0.0,0.045,0.5,0.0,0.0,0.0,4.0
+Session started for user alice,10.0.110.246,low,0,30.0,0.0,0.291,0.25,0.0,0.0,0.0,5.0
+Session started for user alice,10.0.51.98,medium,0,30.0,0.0,0.053,0.5,0.0,0.0,0.0,5.0
+Session started for user charlie,10.0.112.176,medium,0,32.0,0.0,0.419,0.5,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.136.180,medium,0,28.0,0.0,0.977,0.5,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.111.60,medium,0,28.0,0.0,0.067,0.5,0.1,0.0,0.0,4.0
+Connection established from admin,10.0.87.137,low,0,33.0,0.0,0.131,0.25,0.0,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.125.42,medium,0,28.0,0.0,0.553,0.5,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.107.172,medium,0,28.0,0.0,0.588,0.5,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.186.42,medium,0,28.0,0.0,0.218,0.5,0.1,0.0,0.0,4.0
+Port scan detected: root ports scanned,203.0.113.69,critical,1,38.0,1.0,0.035,1.0,0.0,0.3,0.0,6.0
+Connection established from admin,10.0.28.59,medium,0,33.0,0.0,0.618,0.5,0.0,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.101.184,low,0,28.0,0.0,0.374,0.25,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.57.7,medium,0,28.0,0.0,0.846,0.5,0.1,0.0,0.0,4.0
+User admin logged in successfully,10.0.36.156,low,0,33.0,0.0,0.968,0.25,0.0,0.0,0.0,5.0
+GET /../../../etc/passwd HTTP/1.1 403,203.0.113.81,critical,1,37.0,0.0,0.284,1.0,0.8,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.193.21,low,0,28.0,0.0,0.635,0.25,0.1,0.0,0.0,4.0
+Connection established from alice,10.0.81.179,low,0,33.0,0.0,0.724,0.25,0.0,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.150.213,medium,0,28.0,0.0,0.661,0.5,0.1,0.0,0.0,4.0
+Session started for user charlie,10.0.110.246,medium,0,32.0,0.0,0.291,0.5,0.0,0.0,0.0,5.0
+Session started for user charlie,10.0.44.152,low,0,32.0,0.0,0.605,0.25,0.0,0.0,0.0,5.0
+Session started for user admin,10.0.87.137,medium,0,30.0,0.0,0.131,0.5,0.0,0.0,0.0,5.0
+Suspicious activity: root unauthorized access attempts,203.0.113.225,high,1,54.0,2.0,0.924,0.75,0.0,0.0,0.0,6.0
+GET /index.html HTTP/1.1 200,10.0.142.40,low,0,28.0,0.0,0.838,0.25,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.51.98,low,0,28.0,0.0,0.053,0.25,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.47.98,low,0,28.0,0.0,0.983,0.25,0.1,0.0,0.0,4.0
+Session started for user charlie,10.0.40.219,medium,0,32.0,0.0,0.054,0.5,0.0,0.0,0.0,5.0
+Session started for user admin,10.0.214.57,medium,0,30.0,0.0,0.501,0.5,0.0,0.0,0.0,5.0
+Session started for user root,10.0.235.138,low,0,29.0,0.0,0.869,0.25,0.0,0.0,0.0,5.0
+Session started for user alice,10.0.193.21,low,0,30.0,0.0,0.635,0.25,0.0,0.0,0.0,5.0
+Connection established from root,10.0.13.144,low,0,32.0,0.0,0.998,0.25,0.0,0.0,0.0,4.0
+User guest logged in successfully,10.0.235.138,medium,0,33.0,0.0,0.869,0.5,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.142.40,low,0,28.0,0.0,0.838,0.25,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.140.63,low,0,28.0,0.0,0.68,0.25,0.1,0.0,0.0,4.0
+Failed password for invalid user bob from 203.0.113.234 port 52341 ssh2,203.0.113.234,high,1,71.0,2.0,0.182,0.75,0.0,0.0,0.0,11.0
+GET /index.html HTTP/1.1 200,10.0.142.208,medium,0,28.0,0.0,0.676,0.5,0.1,0.0,0.0,4.0
+Suspicious activity: guest unauthorized access attempts,203.0.113.234,critical,1,55.0,2.0,0.182,1.0,0.0,0.0,0.0,6.0
+Suspicious activity: alice unauthorized access attempts,203.0.113.184,critical,1,55.0,2.0,0.514,1.0,0.0,0.0,0.0,6.0
+GET /index.html HTTP/1.1 200,10.0.142.208,low,0,28.0,0.0,0.676,0.25,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.138.254,medium,0,28.0,0.0,0.711,0.5,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.166.216,medium,0,28.0,0.0,0.814,0.5,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.235.138,low,0,28.0,0.0,0.869,0.25,0.1,0.0,0.0,4.0
+Session started for user charlie,10.0.81.179,low,0,32.0,0.0,0.724,0.25,0.0,0.0,0.0,5.0
+Session started for user guest,10.0.172.27,medium,0,30.0,0.0,0.643,0.5,0.0,0.0,0.0,5.0
+Session started for user charlie,10.0.112.176,low,0,32.0,0.0,0.419,0.25,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.150.213,medium,0,28.0,0.0,0.661,0.5,0.1,0.0,0.0,4.0
+User charlie logged in successfully,10.0.49.92,medium,0,35.0,0.0,0.915,0.5,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.63.250,low,0,28.0,0.0,0.165,0.25,0.1,0.0,0.0,4.0
+Session started for user root,10.0.101.184,low,0,29.0,0.0,0.374,0.25,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.193.21,medium,0,28.0,0.0,0.635,0.5,0.1,0.0,0.0,4.0
+Session started for user guest,10.0.236.98,medium,0,30.0,0.0,0.111,0.5,0.0,0.0,0.0,5.0
+Multiple failed login attempts from alice,203.0.113.81,high,1,41.0,1.0,0.284,0.75,0.0,0.0,0.0,6.0
+GET /index.html HTTP/1.1 200,10.0.172.27,medium,0,28.0,0.0,0.643,0.5,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.36.156,low,0,28.0,0.0,0.968,0.25,0.1,0.0,0.0,4.0
+nmap SYN scan detected from bob,203.0.113.225,critical,1,31.0,1.0,0.924,1.0,0.0,0.6,0.0,6.0
+Session started for user charlie,10.0.51.98,low,0,32.0,0.0,0.053,0.25,0.0,0.0,0.0,5.0
+Suspicious activity: bob unauthorized access attempts,203.0.113.225,high,1,53.0,2.0,0.924,0.75,0.0,0.0,0.0,6.0
+User bob logged in successfully,10.0.116.198,medium,0,31.0,0.0,0.235,0.5,0.0,0.0,0.0,5.0
+Connection established from charlie,10.0.16.207,medium,0,35.0,0.0,0.285,0.5,0.0,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.166.216,medium,0,28.0,0.0,0.814,0.5,0.1,0.0,0.0,4.0
+Session started for user admin,10.0.111.60,low,0,30.0,0.0,0.067,0.25,0.0,0.0,0.0,5.0
+User charlie logged in successfully,10.0.98.181,low,0,35.0,0.0,0.028,0.25,0.0,0.0,0.0,5.0
+Session started for user guest,10.0.114.36,medium,0,30.0,0.0,0.588,0.5,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.57.7,medium,0,28.0,0.0,0.846,0.5,0.1,0.0,0.0,4.0
+Connection established from guest,10.0.16.207,medium,0,33.0,0.0,0.285,0.5,0.0,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.110.246,low,0,28.0,0.0,0.291,0.25,0.1,0.0,0.0,4.0
+Failed password for invalid user guest from 203.0.113.234 port 52341 ssh2,203.0.113.234,critical,1,73.0,2.0,0.182,1.0,0.0,0.0,0.0,11.0
+Session started for user bob,10.0.13.144,medium,0,28.0,0.0,0.998,0.5,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.98.181,medium,0,28.0,0.0,0.028,0.5,0.1,0.0,0.0,4.0
+Session started for user bob,10.0.101.184,medium,0,28.0,0.0,0.374,0.5,0.0,0.0,0.0,5.0
+Connection established from admin,10.0.15.24,low,0,33.0,0.0,0.103,0.25,0.0,0.0,0.0,4.0
+SQL injection attempt: ' OR '1'='1 from root,203.0.113.55,critical,1,44.0,1.0,0.647,1.0,0.0,0.3,0.09090909090909091,8.0
+User guest logged in successfully,10.0.193.21,medium,0,33.0,0.0,0.635,0.5,0.0,0.0,0.0,5.0
+Connection established from guest,10.0.28.59,low,0,33.0,0.0,0.618,0.25,0.0,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.47.98,low,0,28.0,0.0,0.983,0.25,0.1,0.0,0.0,4.0
+User admin logged in successfully,10.0.235.138,low,0,33.0,0.0,0.869,0.25,0.0,0.0,0.0,5.0
+Session started for user root,10.0.185.148,low,0,29.0,0.0,0.31,0.25,0.0,0.0,0.0,5.0
+Failed password for invalid user admin from 203.0.113.69 port 52341 ssh2,203.0.113.69,high,1,72.0,2.0,0.035,0.75,0.0,0.0,0.0,11.0
+User charlie logged in successfully,10.0.13.144,low,0,35.0,0.0,0.998,0.25,0.0,0.0,0.0,5.0
+Connection established from guest,10.0.63.250,low,0,33.0,0.0,0.165,0.25,0.0,0.0,0.0,4.0
+nmap SYN scan detected from guest,203.0.113.103,high,1,33.0,1.0,0.447,0.75,0.0,0.6,0.0,6.0
+GET /api/status HTTP/1.1 200,10.0.142.117,medium,0,28.0,0.0,0.824,0.5,0.1,0.0,0.0,4.0
+Connection established from admin,10.0.142.208,medium,0,33.0,0.0,0.676,0.5,0.0,0.0,0.0,4.0
+Session started for user admin,10.0.36.156,medium,0,30.0,0.0,0.968,0.5,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.98.181,low,0,28.0,0.0,0.028,0.25,0.1,0.0,0.0,4.0
+SQL injection attempt: ' OR '1'='1 from root,203.0.113.17,high,1,44.0,1.0,0.671,0.75,0.0,0.3,0.09090909090909091,8.0
+User alice logged in successfully,10.0.98.181,low,0,33.0,0.0,0.028,0.25,0.0,0.0,0.0,5.0
+Connection established from charlie,10.0.15.24,low,0,35.0,0.0,0.103,0.25,0.0,0.0,0.0,4.0
+nmap SYN scan detected from alice,203.0.113.55,critical,1,33.0,1.0,0.647,1.0,0.0,0.6,0.0,6.0
+GET /api/status HTTP/1.1 200,10.0.216.9,low,0,28.0,0.0,0.471,0.25,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.44.152,medium,0,28.0,0.0,0.605,0.5,0.1,0.0,0.0,4.0
+User charlie logged in successfully,10.0.87.137,medium,0,35.0,0.0,0.131,0.5,0.0,0.0,0.0,5.0
+Session started for user guest,10.0.176.155,medium,0,30.0,0.0,0.096,0.5,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.111.60,low,0,28.0,0.0,0.067,0.25,0.1,0.0,0.0,4.0
+User bob logged in successfully,10.0.216.88,medium,0,31.0,0.0,0.258,0.5,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.3.195,medium,0,28.0,0.0,0.045,0.5,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.142.117,low,0,28.0,0.0,0.824,0.25,0.1,0.0,0.0,4.0
+User guest logged in successfully,10.0.98.181,medium,0,33.0,0.0,0.028,0.5,0.0,0.0,0.0,5.0
+Connection established from root,10.0.52.174,low,0,32.0,0.0,0.644,0.25,0.0,0.0,0.0,4.0
+Port scan detected: alice ports scanned,203.0.113.184,critical,1,39.0,1.0,0.514,1.0,0.0,0.3,0.0,6.0
+Failed password for invalid user root from 203.0.113.55 port 52341 ssh2,203.0.113.55,high,1,71.0,2.0,0.647,0.75,0.0,0.0,0.0,11.0
+Port scan detected: admin ports scanned,203.0.113.242,high,1,39.0,1.0,0.597,0.75,0.0,0.3,0.0,6.0
+Connection established from alice,10.0.172.27,medium,0,33.0,0.0,0.643,0.5,0.0,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.51.98,medium,0,28.0,0.0,0.053,0.5,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.36.156,low,0,28.0,0.0,0.968,0.25,0.1,0.0,0.0,4.0
+nmap SYN scan detected from alice,203.0.113.55,critical,1,33.0,1.0,0.647,1.0,0.0,0.6,0.0,6.0
+GET /index.html HTTP/1.1 200,10.0.166.216,low,0,28.0,0.0,0.814,0.25,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.172.27,low,0,28.0,0.0,0.643,0.25,0.1,0.0,0.0,4.0
+Session started for user alice,10.0.15.24,medium,0,30.0,0.0,0.103,0.5,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.28.59,medium,0,28.0,0.0,0.618,0.5,0.1,0.0,0.0,4.0
+Session started for user alice,10.0.51.98,low,0,30.0,0.0,0.053,0.25,0.0,0.0,0.0,5.0
+Session started for user admin,10.0.15.24,low,0,30.0,0.0,0.103,0.25,0.0,0.0,0.0,5.0
+User alice logged in successfully,10.0.148.253,low,0,33.0,0.0,0.425,0.25,0.0,0.0,0.0,5.0
+Session started for user alice,10.0.236.98,medium,0,30.0,0.0,0.111,0.5,0.0,0.0,0.0,5.0
+User root logged in successfully,10.0.142.117,low,0,32.0,0.0,0.824,0.25,0.0,0.0,0.0,5.0
+Session started for user guest,10.0.236.98,medium,0,30.0,0.0,0.111,0.5,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.28.59,low,0,28.0,0.0,0.618,0.25,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.47.98,low,0,28.0,0.0,0.983,0.25,0.1,0.0,0.0,4.0
+Session started for user alice,10.0.111.60,low,0,30.0,0.0,0.067,0.25,0.0,0.0,0.0,5.0
+User charlie logged in successfully,10.0.142.40,medium,0,35.0,0.0,0.838,0.5,0.0,0.0,0.0,5.0
+Session started for user guest,10.0.111.60,medium,0,30.0,0.0,0.067,0.5,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.35.12,low,0,28.0,0.0,0.446,0.25,0.1,0.0,0.0,4.0
+Failed password for invalid user guest from 203.0.113.184 port 52341 ssh2,203.0.113.184,high,1,73.0,2.0,0.514,0.75,0.0,0.0,0.0,11.0
+GET /api/status HTTP/1.1 200,10.0.87.137,medium,0,28.0,0.0,0.131,0.5,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.22.187,medium,0,28.0,0.0,0.253,0.5,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.13.144,medium,0,28.0,0.0,0.998,0.5,0.1,0.0,0.0,4.0
+Session started for user charlie,10.0.44.152,low,0,32.0,0.0,0.605,0.25,0.0,0.0,0.0,5.0
+Session started for user root,10.0.119.222,low,0,29.0,0.0,0.023,0.25,0.0,0.0,0.0,5.0
+GET /../../../etc/passwd HTTP/1.1 403,203.0.113.69,high,1,37.0,0.0,0.035,0.75,0.8,0.0,0.0,4.0
+User charlie logged in successfully,10.0.98.181,low,0,35.0,0.0,0.028,0.25,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.63.250,medium,0,28.0,0.0,0.165,0.5,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.110.246,medium,0,28.0,0.0,0.291,0.5,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.216.9,medium,0,28.0,0.0,0.471,0.5,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.101.184,low,0,28.0,0.0,0.374,0.25,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.216.9,medium,0,28.0,0.0,0.471,0.5,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.63.250,low,0,28.0,0.0,0.165,0.25,0.1,0.0,0.0,4.0
+Session started for user admin,10.0.136.180,medium,0,30.0,0.0,0.977,0.5,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.98.181,low,0,28.0,0.0,0.028,0.25,0.1,0.0,0.0,4.0
+SQL injection attempt: ' OR '1'='1 from root,203.0.113.55,critical,1,44.0,1.0,0.647,1.0,0.0,0.3,0.09090909090909091,8.0
+User guest logged in successfully,10.0.35.12,low,0,33.0,0.0,0.446,0.25,0.0,0.0,0.0,5.0
+Failed password for invalid user guest from 203.0.113.55 port 52341 ssh2,203.0.113.55,critical,1,72.0,2.0,0.647,1.0,0.0,0.0,0.0,11.0
+Connection established from guest,10.0.148.253,medium,0,33.0,0.0,0.425,0.5,0.0,0.0,0.0,4.0
+Suspicious activity: alice unauthorized access attempts,203.0.113.234,critical,1,55.0,2.0,0.182,1.0,0.0,0.0,0.0,6.0
+Connection established from root,10.0.16.207,low,0,32.0,0.0,0.285,0.25,0.0,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.28.59,medium,0,28.0,0.0,0.618,0.5,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.135.207,medium,0,28.0,0.0,0.083,0.5,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.148.253,low,0,28.0,0.0,0.425,0.25,0.1,0.0,0.0,4.0
+User charlie logged in successfully,10.0.16.207,medium,0,35.0,0.0,0.285,0.5,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.142.208,medium,0,28.0,0.0,0.676,0.5,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.142.117,medium,0,28.0,0.0,0.824,0.5,0.1,0.0,0.0,4.0
+Connection established from charlie,10.0.140.63,medium,0,35.0,0.0,0.68,0.5,0.0,0.0,0.0,4.0
+Session started for user admin,10.0.235.138,low,0,30.0,0.0,0.869,0.25,0.0,0.0,0.0,5.0
+Session started for user charlie,10.0.3.195,medium,0,32.0,0.0,0.045,0.5,0.0,0.0,0.0,5.0
+Session started for user guest,10.0.166.216,low,0,30.0,0.0,0.814,0.25,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.22.187,low,0,28.0,0.0,0.253,0.25,0.1,0.0,0.0,4.0
+Connection established from charlie,10.0.140.63,low,0,35.0,0.0,0.68,0.25,0.0,0.0,0.0,4.0
+Connection established from charlie,10.0.44.152,low,0,35.0,0.0,0.605,0.25,0.0,0.0,0.0,4.0
+Connection established from root,10.0.142.208,low,0,32.0,0.0,0.676,0.25,0.0,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.3.195,medium,0,28.0,0.0,0.045,0.5,0.1,0.0,0.0,4.0
+Session started for user admin,10.0.110.246,medium,0,30.0,0.0,0.291,0.5,0.0,0.0,0.0,5.0
+GET /../../../etc/passwd HTTP/1.1 403,203.0.113.55,high,1,37.0,0.0,0.647,0.75,0.8,0.0,0.0,4.0
+User admin logged in successfully,10.0.189.91,low,0,33.0,0.0,0.497,0.25,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.114.36,medium,0,28.0,0.0,0.588,0.5,0.1,0.0,0.0,4.0
+Failed password for invalid user admin from 203.0.113.69 port 52341 ssh2,203.0.113.69,critical,1,72.0,2.0,0.035,1.0,0.0,0.0,0.0,11.0
+Port scan detected: guest ports scanned,203.0.113.81,high,1,39.0,1.0,0.284,0.75,0.0,0.3,0.0,6.0
+Port scan detected: charlie ports scanned,203.0.113.146,critical,1,41.0,1.0,0.355,1.0,0.0,0.3,0.0,6.0
+User guest logged in successfully,10.0.125.42,low,0,33.0,0.0,0.553,0.25,0.0,0.0,0.0,5.0
+nmap SYN scan detected from bob,203.0.113.55,critical,1,31.0,1.0,0.647,1.0,0.0,0.6,0.0,6.0
+User charlie logged in successfully,10.0.35.12,medium,0,35.0,0.0,0.446,0.5,0.0,0.0,0.0,5.0
+Connection established from root,10.0.28.59,low,0,32.0,0.0,0.618,0.25,0.0,0.0,0.0,4.0
+Connection established from bob,10.0.119.222,low,0,31.0,0.0,0.023,0.25,0.0,0.0,0.0,4.0
+User root logged in successfully,10.0.236.98,low,0,32.0,0.0,0.111,0.25,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.107.172,low,0,28.0,0.0,0.588,0.25,0.1,0.0,0.0,4.0
+Connection established from guest,10.0.142.117,medium,0,33.0,0.0,0.824,0.5,0.0,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.63.250,medium,0,28.0,0.0,0.165,0.5,0.1,0.0,0.0,4.0
+User alice logged in successfully,10.0.13.144,medium,0,33.0,0.0,0.998,0.5,0.0,0.0,0.0,5.0
+nmap SYN scan detected from charlie,203.0.113.234,high,1,35.0,1.0,0.182,0.75,0.0,0.6,0.0,6.0
+GET /api/status HTTP/1.1 200,10.0.52.174,medium,0,28.0,0.0,0.644,0.5,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.111.60,medium,0,28.0,0.0,0.067,0.5,0.1,0.0,0.0,4.0
+Multiple failed login attempts from bob,203.0.113.242,high,1,39.0,1.0,0.597,0.75,0.0,0.0,0.0,6.0
+Connection established from admin,10.0.3.195,medium,0,33.0,0.0,0.045,0.5,0.0,0.0,0.0,4.0
+User admin logged in successfully,10.0.47.98,medium,0,33.0,0.0,0.983,0.5,0.0,0.0,0.0,5.0
+Port scan detected: bob ports scanned,203.0.113.69,high,1,37.0,1.0,0.035,0.75,0.0,0.3,0.0,6.0
+Multiple failed login attempts from root,203.0.113.234,high,1,40.0,1.0,0.182,0.75,0.0,0.0,0.0,6.0
+Connection established from root,10.0.148.253,low,0,32.0,0.0,0.425,0.25,0.0,0.0,0.0,4.0
+Suspicious activity: guest unauthorized access attempts,203.0.113.225,high,1,55.0,2.0,0.924,0.75,0.0,0.0,0.0,6.0
+User charlie logged in successfully,10.0.186.42,low,0,35.0,0.0,0.218,0.25,0.0,0.0,0.0,5.0
+Suspicious activity: bob unauthorized access attempts,203.0.113.55,critical,1,53.0,2.0,0.647,1.0,0.0,0.0,0.0,6.0
+GET /api/status HTTP/1.1 200,10.0.114.36,low,0,28.0,0.0,0.588,0.25,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.112.176,medium,0,28.0,0.0,0.419,0.5,0.1,0.0,0.0,4.0
+Session started for user bob,10.0.185.148,medium,0,28.0,0.0,0.31,0.5,0.0,0.0,0.0,5.0
+Session started for user root,10.0.40.219,medium,0,29.0,0.0,0.054,0.5,0.0,0.0,0.0,5.0
+Connection established from guest,10.0.166.216,medium,0,33.0,0.0,0.814,0.5,0.0,0.0,0.0,4.0
+Session started for user guest,10.0.63.250,medium,0,30.0,0.0,0.165,0.5,0.0,0.0,0.0,5.0
+Port scan detected: bob ports scanned,203.0.113.225,critical,1,37.0,1.0,0.924,1.0,0.0,0.3,0.0,6.0
+GET /api/status HTTP/1.1 200,10.0.235.138,medium,0,28.0,0.0,0.869,0.5,0.1,0.0,0.0,4.0
+Connection established from root,10.0.81.179,low,0,32.0,0.0,0.724,0.25,0.0,0.0,0.0,4.0
+Connection established from root,10.0.112.176,medium,0,32.0,0.0,0.419,0.5,0.0,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.216.9,medium,0,28.0,0.0,0.471,0.5,0.1,0.0,0.0,4.0
+Multiple failed login attempts from bob,203.0.113.69,critical,1,39.0,1.0,0.035,1.0,0.0,0.0,0.0,6.0
+GET /api/status HTTP/1.1 200,10.0.3.195,low,0,28.0,0.0,0.045,0.25,0.1,0.0,0.0,4.0
+Connection established from root,10.0.125.42,low,0,32.0,0.0,0.553,0.25,0.0,0.0,0.0,4.0
+Multiple failed login attempts from alice,203.0.113.69,critical,1,41.0,1.0,0.035,1.0,0.0,0.0,0.0,6.0
+GET /index.html HTTP/1.1 200,10.0.63.250,low,0,28.0,0.0,0.165,0.25,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.110.246,low,0,28.0,0.0,0.291,0.25,0.1,0.0,0.0,4.0
+GET /../../../etc/passwd HTTP/1.1 403,203.0.113.225,high,1,37.0,0.0,0.924,0.75,0.8,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.81.179,low,0,28.0,0.0,0.724,0.25,0.1,0.0,0.0,4.0
+Suspicious activity: charlie unauthorized access attempts,203.0.113.184,high,1,57.0,2.0,0.514,0.75,0.0,0.0,0.0,6.0
+User charlie logged in successfully,10.0.216.9,medium,0,35.0,0.0,0.471,0.5,0.0,0.0,0.0,5.0
+Suspicious activity: guest unauthorized access attempts,203.0.113.184,high,1,55.0,2.0,0.514,0.75,0.0,0.0,0.0,6.0
+nmap SYN scan detected from alice,203.0.113.81,high,1,33.0,1.0,0.284,0.75,0.0,0.6,0.0,6.0
+User admin logged in successfully,10.0.22.187,low,0,33.0,0.0,0.253,0.25,0.0,0.0,0.0,5.0
+Session started for user admin,10.0.35.12,low,0,30.0,0.0,0.446,0.25,0.0,0.0,0.0,5.0
+Session started for user admin,10.0.236.98,medium,0,30.0,0.0,0.111,0.5,0.0,0.0,0.0,5.0
+Session started for user alice,10.0.81.179,medium,0,30.0,0.0,0.724,0.5,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.28.59,low,0,28.0,0.0,0.618,0.25,0.1,0.0,0.0,4.0
+Connection established from charlie,10.0.148.253,medium,0,35.0,0.0,0.425,0.5,0.0,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.52.174,low,0,28.0,0.0,0.644,0.25,0.1,0.0,0.0,4.0
+Session started for user guest,10.0.98.181,medium,0,30.0,0.0,0.028,0.5,0.0,0.0,0.0,5.0
+User alice logged in successfully,10.0.216.9,medium,0,33.0,0.0,0.471,0.5,0.0,0.0,0.0,5.0
+User charlie logged in successfully,10.0.172.27,medium,0,35.0,0.0,0.643,0.5,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.28.59,low,0,28.0,0.0,0.618,0.25,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.116.198,low,0,28.0,0.0,0.235,0.25,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.186.42,medium,0,28.0,0.0,0.218,0.5,0.1,0.0,0.0,4.0
+Session started for user guest,10.0.87.137,medium,0,30.0,0.0,0.131,0.5,0.0,0.0,0.0,5.0
+Suspicious activity: charlie unauthorized access attempts,203.0.113.146,high,1,57.0,2.0,0.355,0.75,0.0,0.0,0.0,6.0
+nmap SYN scan detected from guest,203.0.113.146,critical,1,33.0,1.0,0.355,1.0,0.0,0.6,0.0,6.0
+Connection established from guest,10.0.186.42,medium,0,33.0,0.0,0.218,0.5,0.0,0.0,0.0,4.0
+Session started for user charlie,10.0.236.98,low,0,32.0,0.0,0.111,0.25,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.136.180,low,0,28.0,0.0,0.977,0.25,0.1,0.0,0.0,4.0
+SQL injection attempt: ' OR '1'='1 from charlie,203.0.113.81,critical,1,47.0,1.0,0.284,1.0,0.0,0.3,0.0851063829787234,8.0
+SQL injection attempt: ' OR '1'='1 from charlie,203.0.113.17,high,1,47.0,1.0,0.671,0.75,0.0,0.3,0.0851063829787234,8.0
+Connection established from guest,10.0.107.172,low,0,33.0,0.0,0.588,0.25,0.0,0.0,0.0,4.0
+Connection established from alice,10.0.98.181,medium,0,33.0,0.0,0.028,0.5,0.0,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.186.42,low,0,28.0,0.0,0.218,0.25,0.1,0.0,0.0,4.0
+User guest logged in successfully,10.0.110.246,medium,0,33.0,0.0,0.291,0.5,0.0,0.0,0.0,5.0
+Port scan detected: root ports scanned,203.0.113.55,high,1,38.0,1.0,0.647,0.75,0.0,0.3,0.0,6.0
+GET /api/status HTTP/1.1 200,10.0.52.174,medium,0,28.0,0.0,0.644,0.5,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.28.59,low,0,28.0,0.0,0.618,0.25,0.1,0.0,0.0,4.0
+Suspicious activity: admin unauthorized access attempts,203.0.113.69,critical,1,55.0,2.0,0.035,1.0,0.0,0.0,0.0,6.0
+GET /api/status HTTP/1.1 200,10.0.216.9,medium,0,28.0,0.0,0.471,0.5,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.52.174,low,0,28.0,0.0,0.644,0.25,0.1,0.0,0.0,4.0
+Multiple failed login attempts from charlie,203.0.113.69,critical,1,43.0,1.0,0.035,1.0,0.0,0.0,0.0,6.0
+User admin logged in successfully,10.0.142.117,low,0,33.0,0.0,0.824,0.25,0.0,0.0,0.0,5.0
+Session started for user root,10.0.57.7,medium,0,29.0,0.0,0.846,0.5,0.0,0.0,0.0,5.0
+User guest logged in successfully,10.0.51.98,medium,0,33.0,0.0,0.053,0.5,0.0,0.0,0.0,5.0
+Session started for user guest,10.0.49.92,medium,0,30.0,0.0,0.915,0.5,0.0,0.0,0.0,5.0
+Failed password for invalid user guest from 203.0.113.146 port 52341 ssh2,203.0.113.146,high,1,73.0,2.0,0.355,0.75,0.0,0.0,0.0,11.0
+User alice logged in successfully,10.0.47.98,medium,0,33.0,0.0,0.983,0.5,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.185.148,low,0,28.0,0.0,0.31,0.25,0.1,0.0,0.0,4.0
+User guest logged in successfully,10.0.119.222,low,0,33.0,0.0,0.023,0.25,0.0,0.0,0.0,5.0
+Failed password for invalid user admin from 203.0.113.234 port 52341 ssh2,203.0.113.234,critical,1,73.0,2.0,0.182,1.0,0.0,0.0,0.0,11.0
+Session started for user charlie,10.0.185.148,medium,0,32.0,0.0,0.31,0.5,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.110.246,low,0,28.0,0.0,0.291,0.25,0.1,0.0,0.0,4.0
+User admin logged in successfully,10.0.142.117,medium,0,33.0,0.0,0.824,0.5,0.0,0.0,0.0,5.0
+Connection established from root,10.0.142.208,low,0,32.0,0.0,0.676,0.25,0.0,0.0,0.0,4.0
+Failed password for invalid user charlie from 203.0.113.225 port 52341 ssh2,203.0.113.225,critical,1,75.0,2.0,0.924,1.0,0.0,0.0,0.0,11.0
+GET /api/status HTTP/1.1 200,10.0.101.184,medium,0,28.0,0.0,0.374,0.5,0.1,0.0,0.0,4.0
+Session started for user root,10.0.172.27,medium,0,29.0,0.0,0.643,0.5,0.0,0.0,0.0,5.0
+User root logged in successfully,10.0.142.117,low,0,32.0,0.0,0.824,0.25,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.13.144,medium,0,28.0,0.0,0.998,0.5,0.1,0.0,0.0,4.0
+User charlie logged in successfully,10.0.136.180,low,0,35.0,0.0,0.977,0.25,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.216.88,low,0,28.0,0.0,0.258,0.25,0.1,0.0,0.0,4.0
+Connection established from admin,10.0.51.98,medium,0,33.0,0.0,0.053,0.5,0.0,0.0,0.0,4.0
+Session started for user charlie,10.0.176.155,low,0,32.0,0.0,0.096,0.25,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.148.253,low,0,28.0,0.0,0.425,0.25,0.1,0.0,0.0,4.0
+User bob logged in successfully,10.0.110.246,low,0,31.0,0.0,0.291,0.25,0.0,0.0,0.0,5.0
+User guest logged in successfully,10.0.150.213,low,0,33.0,0.0,0.661,0.25,0.0,0.0,0.0,5.0
+User alice logged in successfully,10.0.16.207,low,0,33.0,0.0,0.285,0.25,0.0,0.0,0.0,5.0
+Suspicious activity: bob unauthorized access attempts,203.0.113.184,high,1,53.0,2.0,0.514,0.75,0.0,0.0,0.0,6.0
+GET /api/status HTTP/1.1 200,10.0.28.59,low,0,28.0,0.0,0.618,0.25,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.166.216,medium,0,28.0,0.0,0.814,0.5,0.1,0.0,0.0,4.0
+Connection established from alice,10.0.119.222,medium,0,33.0,0.0,0.023,0.5,0.0,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.35.12,low,0,28.0,0.0,0.446,0.25,0.1,0.0,0.0,4.0
+Suspicious activity: charlie unauthorized access attempts,203.0.113.55,high,1,57.0,2.0,0.647,0.75,0.0,0.0,0.0,6.0
+GET /api/status HTTP/1.1 200,10.0.101.184,medium,0,28.0,0.0,0.374,0.5,0.1,0.0,0.0,4.0
+Session started for user bob,10.0.142.117,low,0,28.0,0.0,0.824,0.25,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.35.12,medium,0,28.0,0.0,0.446,0.5,0.1,0.0,0.0,4.0
+Session started for user charlie,10.0.57.7,medium,0,32.0,0.0,0.846,0.5,0.0,0.0,0.0,5.0
+Connection established from admin,10.0.111.60,medium,0,33.0,0.0,0.067,0.5,0.0,0.0,0.0,4.0
+SQL injection attempt: ' OR '1'='1 from guest,203.0.113.242,critical,1,45.0,1.0,0.597,1.0,0.0,0.3,0.08888888888888889,8.0
+Connection established from guest,10.0.136.180,medium,0,33.0,0.0,0.977,0.5,0.0,0.0,0.0,4.0
+GET /../../../etc/passwd HTTP/1.1 403,203.0.113.81,critical,1,37.0,0.0,0.284,1.0,0.8,0.0,0.0,4.0
+Session started for user charlie,10.0.119.222,medium,0,32.0,0.0,0.023,0.5,0.0,0.0,0.0,5.0
+Multiple failed login attempts from guest,203.0.113.184,high,1,41.0,1.0,0.514,0.75,0.0,0.0,0.0,6.0
+Connection established from charlie,10.0.140.63,low,0,35.0,0.0,0.68,0.25,0.0,0.0,0.0,4.0
+Failed password for invalid user root from 203.0.113.146 port 52341 ssh2,203.0.113.146,critical,1,72.0,2.0,0.355,1.0,0.0,0.0,0.0,11.0
+Connection established from admin,10.0.172.27,medium,0,33.0,0.0,0.643,0.5,0.0,0.0,0.0,4.0
+Connection established from guest,10.0.87.137,low,0,33.0,0.0,0.131,0.25,0.0,0.0,0.0,4.0
+nmap SYN scan detected from guest,203.0.113.69,high,1,33.0,1.0,0.035,0.75,0.0,0.6,0.0,6.0
+GET /api/status HTTP/1.1 200,10.0.136.180,low,0,28.0,0.0,0.977,0.25,0.1,0.0,0.0,4.0
+Suspicious activity: charlie unauthorized access attempts,203.0.113.69,high,1,57.0,2.0,0.035,0.75,0.0,0.0,0.0,6.0
+Connection established from root,10.0.110.246,medium,0,32.0,0.0,0.291,0.5,0.0,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.229.151,medium,0,28.0,0.0,0.492,0.5,0.1,0.0,0.0,4.0
+Session started for user root,10.0.193.21,medium,0,29.0,0.0,0.635,0.5,0.0,0.0,0.0,5.0
+Connection established from bob,10.0.142.117,low,0,31.0,0.0,0.824,0.25,0.0,0.0,0.0,4.0
+User admin logged in successfully,10.0.52.174,medium,0,33.0,0.0,0.644,0.5,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.150.213,medium,0,28.0,0.0,0.661,0.5,0.1,0.0,0.0,4.0
+SQL injection attempt: ' OR '1'='1 from root,203.0.113.234,critical,1,44.0,1.0,0.182,1.0,0.0,0.3,0.09090909090909091,8.0
+Connection established from admin,10.0.63.250,medium,0,33.0,0.0,0.165,0.5,0.0,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.172.27,low,0,28.0,0.0,0.643,0.25,0.1,0.0,0.0,4.0
+User bob logged in successfully,10.0.57.7,medium,0,31.0,0.0,0.846,0.5,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.138.254,low,0,28.0,0.0,0.711,0.25,0.1,0.0,0.0,4.0
+Session started for user alice,10.0.216.9,low,0,30.0,0.0,0.471,0.25,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.107.172,low,0,28.0,0.0,0.588,0.25,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.3.195,medium,0,28.0,0.0,0.045,0.5,0.1,0.0,0.0,4.0
+Connection established from bob,10.0.186.42,medium,0,31.0,0.0,0.218,0.5,0.0,0.0,0.0,4.0
+Connection established from charlie,10.0.216.88,medium,0,35.0,0.0,0.258,0.5,0.0,0.0,0.0,4.0
+Port scan detected: admin ports scanned,203.0.113.146,critical,1,39.0,1.0,0.355,1.0,0.0,0.3,0.0,6.0
+GET /api/status HTTP/1.1 200,10.0.44.152,low,0,28.0,0.0,0.605,0.25,0.1,0.0,0.0,4.0
+User root logged in successfully,10.0.107.172,medium,0,32.0,0.0,0.588,0.5,0.0,0.0,0.0,5.0
+Connection established from alice,10.0.125.42,low,0,33.0,0.0,0.553,0.25,0.0,0.0,0.0,4.0
+User alice logged in successfully,10.0.142.40,medium,0,33.0,0.0,0.838,0.5,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.40.219,low,0,28.0,0.0,0.054,0.25,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.47.98,low,0,28.0,0.0,0.983,0.25,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.87.137,low,0,28.0,0.0,0.131,0.25,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.176.155,medium,0,28.0,0.0,0.096,0.5,0.1,0.0,0.0,4.0
+GET /../../../etc/passwd HTTP/1.1 403,203.0.113.234,critical,1,37.0,0.0,0.182,1.0,0.8,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.36.156,medium,0,28.0,0.0,0.968,0.5,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.28.59,medium,0,28.0,0.0,0.618,0.5,0.1,0.0,0.0,4.0
+Connection established from bob,10.0.166.216,medium,0,31.0,0.0,0.814,0.5,0.0,0.0,0.0,4.0
+Failed password for invalid user charlie from 203.0.113.234 port 52341 ssh2,203.0.113.234,high,1,75.0,2.0,0.182,0.75,0.0,0.0,0.0,11.0
+GET /api/status HTTP/1.1 200,10.0.16.207,medium,0,28.0,0.0,0.285,0.5,0.1,0.0,0.0,4.0
+Connection established from root,10.0.214.57,medium,0,32.0,0.0,0.501,0.5,0.0,0.0,0.0,4.0
+Session started for user guest,10.0.40.219,low,0,30.0,0.0,0.054,0.25,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.22.187,medium,0,28.0,0.0,0.253,0.5,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.150.213,medium,0,28.0,0.0,0.661,0.5,0.1,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.110.246,low,0,28.0,0.0,0.291,0.25,0.1,0.0,0.0,4.0
+Suspicious activity: bob unauthorized access attempts,203.0.113.69,high,1,53.0,2.0,0.035,0.75,0.0,0.0,0.0,6.0
+Connection established from alice,10.0.189.91,medium,0,33.0,0.0,0.497,0.5,0.0,0.0,0.0,4.0
+Session started for user alice,10.0.136.180,medium,0,30.0,0.0,0.977,0.5,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.193.21,low,0,28.0,0.0,0.635,0.25,0.1,0.0,0.0,4.0
+User alice logged in successfully,10.0.81.179,low,0,33.0,0.0,0.724,0.25,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.116.198,medium,0,28.0,0.0,0.235,0.5,0.1,0.0,0.0,4.0
+User alice logged in successfully,10.0.125.42,low,0,33.0,0.0,0.553,0.25,0.0,0.0,0.0,5.0
+Connection established from admin,10.0.148.253,medium,0,33.0,0.0,0.425,0.5,0.0,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.44.152,low,0,28.0,0.0,0.605,0.25,0.1,0.0,0.0,4.0
+User root logged in successfully,10.0.214.57,medium,0,32.0,0.0,0.501,0.5,0.0,0.0,0.0,5.0
+Connection established from charlie,10.0.3.195,low,0,35.0,0.0,0.045,0.25,0.0,0.0,0.0,4.0
+Suspicious activity: root unauthorized access attempts,203.0.113.55,critical,1,54.0,2.0,0.647,1.0,0.0,0.0,0.0,6.0
+SQL injection attempt: ' OR '1'='1 from admin,203.0.113.184,critical,1,45.0,1.0,0.514,1.0,0.0,0.3,0.08888888888888889,8.0
+GET /index.html HTTP/1.1 200,10.0.81.179,medium,0,28.0,0.0,0.724,0.5,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.193.21,low,0,28.0,0.0,0.635,0.25,0.1,0.0,0.0,4.0
+User guest logged in successfully,10.0.135.207,medium,0,33.0,0.0,0.083,0.5,0.0,0.0,0.0,5.0
+Suspicious activity: admin unauthorized access attempts,203.0.113.69,high,1,55.0,2.0,0.035,0.75,0.0,0.0,0.0,6.0
+Connection established from bob,10.0.16.207,medium,0,31.0,0.0,0.285,0.5,0.0,0.0,0.0,4.0
+Connection established from guest,10.0.35.12,medium,0,33.0,0.0,0.446,0.5,0.0,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.189.91,medium,0,28.0,0.0,0.497,0.5,0.1,0.0,0.0,4.0
+Suspicious activity: alice unauthorized access attempts,203.0.113.225,critical,1,55.0,2.0,0.924,1.0,0.0,0.0,0.0,6.0
+User guest logged in successfully,10.0.185.148,low,0,33.0,0.0,0.31,0.25,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.189.91,low,0,28.0,0.0,0.497,0.25,0.1,0.0,0.0,4.0
+Session started for user alice,10.0.44.152,low,0,30.0,0.0,0.605,0.25,0.0,0.0,0.0,5.0
+Session started for user admin,10.0.125.42,low,0,30.0,0.0,0.553,0.25,0.0,0.0,0.0,5.0
+User guest logged in successfully,10.0.81.179,low,0,33.0,0.0,0.724,0.25,0.0,0.0,0.0,5.0
+User admin logged in successfully,10.0.216.88,low,0,33.0,0.0,0.258,0.25,0.0,0.0,0.0,5.0
+Connection established from alice,10.0.44.152,medium,0,33.0,0.0,0.605,0.5,0.0,0.0,0.0,4.0
+User alice logged in successfully,10.0.172.27,medium,0,33.0,0.0,0.643,0.5,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.47.98,medium,0,28.0,0.0,0.983,0.5,0.1,0.0,0.0,4.0
+Session started for user admin,10.0.112.176,low,0,30.0,0.0,0.419,0.25,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.193.21,medium,0,28.0,0.0,0.635,0.5,0.1,0.0,0.0,4.0
+Connection established from charlie,10.0.112.176,low,0,35.0,0.0,0.419,0.25,0.0,0.0,0.0,4.0
+User guest logged in successfully,10.0.150.213,low,0,33.0,0.0,0.661,0.25,0.0,0.0,0.0,5.0
+GET /api/status HTTP/1.1 200,10.0.189.91,medium,0,28.0,0.0,0.497,0.5,0.1,0.0,0.0,4.0
+Connection established from alice,10.0.98.181,low,0,33.0,0.0,0.028,0.25,0.0,0.0,0.0,4.0
+User guest logged in successfully,10.0.136.180,medium,0,33.0,0.0,0.977,0.5,0.0,0.0,0.0,5.0
+nmap SYN scan detected from bob,203.0.113.103,critical,1,31.0,1.0,0.447,1.0,0.0,0.6,0.0,6.0
+SQL injection attempt: ' OR '1'='1 from alice,203.0.113.17,critical,1,45.0,1.0,0.671,1.0,0.0,0.3,0.08888888888888889,8.0
+GET /api/status HTTP/1.1 200,10.0.16.207,low,0,28.0,0.0,0.285,0.25,0.1,0.0,0.0,4.0
+GET /index.html HTTP/1.1 200,10.0.36.156,low,0,28.0,0.0,0.968,0.25,0.1,0.0,0.0,4.0
+SQL injection attempt: ' OR '1'='1 from alice,203.0.113.17,high,1,45.0,1.0,0.671,0.75,0.0,0.3,0.08888888888888889,8.0
+Failed password for invalid user admin from 203.0.113.81 port 52341 ssh2,203.0.113.81,high,1,72.0,2.0,0.284,0.75,0.0,0.0,0.0,11.0
+User bob logged in successfully,10.0.216.9,medium,0,31.0,0.0,0.471,0.5,0.0,0.0,0.0,5.0
+GET /index.html HTTP/1.1 200,10.0.142.40,low,0,28.0,0.0,0.838,0.25,0.1,0.0,0.0,4.0
+GET /../../../etc/passwd HTTP/1.1 403,203.0.113.234,critical,1,37.0,0.0,0.182,1.0,0.8,0.0,0.0,4.0
+Connection established from alice,10.0.16.207,low,0,33.0,0.0,0.285,0.25,0.0,0.0,0.0,4.0
+Connection established from admin,10.0.107.172,medium,0,33.0,0.0,0.588,0.5,0.0,0.0,0.0,4.0
+GET /api/status HTTP/1.1 200,10.0.81.179,medium,0,28.0,0.0,0.724,0.5,0.1,0.0,0.0,4.0

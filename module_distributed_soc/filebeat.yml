@@ -1,0 +1,19 @@
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - /hostfs/var/log/auth.log          # SSH et connexions
+      - /hostfs/var/log/syslog            # Messages système
+      - /hostfs/var/log/kern.log          # Kernel
+      # Ajoute si tu as Nginx ou Apache
+      # - /hostfs/var/log/nginx/access.log
+      # - /hostfs/var/log/nginx/error.log
+
+output.kafka:
+  hosts: ["kafka:9092"]
+  topic: "events_raw"
+  compression: gzip
+  required_acks: 1
+
+logging.level: warning
+logging.to_files: false

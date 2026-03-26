@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOC IA Dashboard</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- React & ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <!-- Babel pour JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Socket.IO -->
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    
+    <!-- Recharts pour les graphiques -->
+    <script src="https://unpkg.com/recharts@2.5.0/dist/Recharts.js"></script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(51, 65, 85, 0.3);
+            border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(34, 211, 238, 0.5);
+            border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(34, 211, 238, 0.7);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        
+        // Connexion Socket.IO
+        const socket = io();
+        
+        const SOCDashboard = () => {
+            const [stats, setStats] = useState({
+                events_processed: 0,
+                threats_detected: 0,
+                blocked_ips: 0,
+                avg_latency: 0,
+                active_connections: 0,
+                system_status: 'operational'
+            });
+            
+            const [recentEvents, setRecentEvents] = useState([]);
+            const [mitreStats, setMitreStats] = useState([]);
+            const [performance, setPerformance] = useState({
+                cpu: 0,
+                memory: 0,
+                network: 0,
+                disk: 0
+            });
+            const [ateliers, setAteliers] = useState({});
+            const [connected, setConnected] = useState(false);
+            
+            useEffect(() => {
+                // Chargement initial des données
+                fetchData();
+                
+                // Socket.IO listeners
+                socket.on('connect', () => {
+                    console.log('Connected to SOC IA Backend');
+                    setConnected(true);
+                });
+                
+                socket.on('disconnect', () => {
+                    console.log('Disconnected from SOC IA Backend');
+                    setConnected(false);
+                });
+                
+                socket.on('stats_update', (data) => {
+                    setStats(data);
+                });
+                
+                socket.on('new_event', (event) => {
+                    setRecentEvents(prev => [event, ...prev].slice(0, 50));
+                });
+                
+                socket.on('state_update', (state) => {
+                    setStats(state.stats);
+                    setRecentEvents(state.recent_events);
+                    setPerformance(state.performance);
+                    setAteliers(state.ateliers);
+                });
+                
+                // Polling en backup si WebSocket fail
+                const interval = setInterval(fetchData, 5000);
+                
+                return () => {
+                    clearInterval(interval);
+                    socket.off('connect');
+                    socket.off('disconnect');
+                    socket.off('stats_update');
+                    socket.off('new_event');
+                    socket.off('state_update');
+                };
+            }, []);
+            
+            const fetchData = async () => {
+                try {
+                    const [statsRes, eventsRes, performanceRes, ateliersRes] = await Promise.all([
+                        fetch('/api/stats'),
+                        fetch('/api/events'),
+                        fetch('/api/performance'),
+                        fetch('/api/ateliers')
+                    ]);
+                    
+                    if (statsRes.ok) setStats(await statsRes.json());
+                    if (eventsRes.ok) setRecentEvents(await eventsRes.json());
+                    if (performanceRes.ok) setPerformance(await performanceRes.json());
+                    if (ateliersRes.ok) setAteliers(await ateliersRes.json());
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                }
+            };
+            
+            const getSeverityColor = (severity) => {
+                const colors = {
+                    low: 'bg-blue-500',
+                    medium: 'bg-yellow-500',
+                    high: 'bg-orange-500',
+                    critical: 'bg-red-500'
+                };
+                return colors[severity] || 'bg-gray-500';
+            };
+            
+            return (
+                <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white p-6">
+                    {/* Header */}
+                    <header className="mb-8">
+                        <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-4">
+                                <div className="w-12 h-12 text-cyan-400">
+                                    <lucide-shield size={48} />
+                                </div>
+                                <div>
+                                    <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                                        SOC IA Dashboard
+                                    </h1>
+                                    <p className="text-slate-400 mt-1">Security Operations Center - Intelligence Artificielle</p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <div className={`flex items-center gap-2 px-4 py-2 rounded-lg ${connected ? 'bg-green-500/20' : 'bg-red-500/20'}`}>
+                                    <div className={`w-2 h-2 rounded-full ${connected ? 'bg-green-500' : 'bg-red-500'} animate-pulse`} />
+                                    <span className="text-sm font-semibold">{connected ? 'Connecté' : 'Déconnecté'}</span>
+                                </div>
+                                <div className={`flex items-center gap-2 px-4 py-2 rounded-lg ${stats.system_status === 'operational' ? 'bg-green-500/20' : 'bg-red-500/20'}`}>
+                                    <span className="font-semibold">{stats.system_status === 'operational' ? 'Opérationnel' : 'Alerte'}</span>
+                                </div>
+                                <div className="text-sm text-slate-400">
+                                    {new Date().toLocaleString('fr-FR')}
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    
+                    {/* Stats Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
+                        <StatCard
+                            title="Événements"
+                            value={stats.events_processed || 0}
+                            color="cyan"
+                            icon="database"
+                        />
+                        <StatCard
+                            title="Menaces"
+                            value={stats.threats_detected || 0}
+                            color="red"
+                            icon="alert-triangle"
+                        />
+                        <StatCard
+                            title="IPs Bloquées"
+                            value={stats.blocked_ips || 0}
+                            color="orange"
+                            icon="x-circle"
+                        />
+                        <StatCard
+                            title="Latence"
+                            value={`${(stats.avg_latency || 0).toFixed(1)}ms`}
+                            color="green"
+                            icon="clock"
+                        />
+                        <StatCard
+                            title="Connexions"
+                            value={stats.active_connections || 0}
+                            color="blue"
+                            icon="activity"
+                        />
+                    </div>
+                    
+                    {/* Main Grid */}
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                        {/* Recent Events */}
+                        <div className="lg:col-span-2 bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-700 p-6">
+                            <h2 className="text-2xl font-bold mb-4">Événements Récents</h2>
+                            <div className="space-y-3 max-h-96 overflow-y-auto custom-scrollbar">
+                                {recentEvents.length === 0 ? (
+                                    <p className="text-slate-400 text-center py-8">Aucun événement récent</p>
+                                ) : (
+                                    recentEvents.slice(0, 10).map((event, idx) => (
+                                        <div key={idx} className="bg-slate-900/50 rounded-lg p-4 border border-slate-700 hover:border-cyan-500/50 transition-all">
+                                            <div className="flex items-center justify-between mb-2">
+                                                <span className="font-semibold text-cyan-400">{event.type || 'Unknown'}</span>
+                                                <span className="text-xs text-slate-400">{event.timestamp || 'N/A'}</span>
+                                            </div>
+                                            <div className="grid grid-cols-3 gap-2 text-sm">
+                                                <div>
+                                                    <span className="text-slate-400">IP: </span>
+                                                    <span className="font-mono">{event.ip_source || event.ip || 'N/A'}</span>
+                                                </div>
+                                                <div>
+                                                    <span className="text-slate-400">Confiance: </span>
+                                                    <span className="text-green-400">{((event.confidence || 0) * 100).toFixed(0)}%</span>
+                                                </div>
+                                                <div>
+                                                    <span className="text-slate-400">Action: </span>
+                                                    <span className={`font-semibold ${
+                                                        event.action === 'block' ? 'text-red-400' :
+                                                        event.action === 'alert' ? 'text-yellow-400' : 'text-blue-400'
+                                                    }`}>
+                                                        {(event.action || 'monitor').toUpperCase()}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))
+                                )}
+                            </div>
+                        </div>
+                        
+                        {/* Performance */}
+                        <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-700 p-6">
+                            <h2 className="text-2xl font-bold mb-4">Performance Système</h2>
+                            <div className="space-y-4">
+                                <PerformanceBar label="CPU" value={performance.cpu || 0} />
+                                <PerformanceBar label="Mémoire" value={performance.memory || 0} />
+                                <PerformanceBar label="Réseau" value={performance.network || 0} />
+                                <PerformanceBar label="Disque" value={performance.disk || 0} />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {/* Ateliers */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {Object.entries(ateliers).map(([key, atelier]) => (
+                            <AtelierCard key={key} name={`Atelier ${key}`} data={atelier} />
+                        ))}
+                    </div>
+                </div>
+            );
+        };
+        
+        const StatCard = ({ title, value, color, icon }) => {
+            return (
+                <div className={`bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-700 p-6 hover:scale-105 transition-transform`}>
+                    <div className="text-3xl font-bold mb-1">{value}</div>
+                    <div className="text-sm text-slate-400">{title}</div>
+                </div>
+            );
+        };
+        
+        const PerformanceBar = ({ label, value }) => {
+            return (
+                <div>
+                    <div className="flex justify-between mb-2">
+                        <span className="text-sm">{label}</span>
+                        <span className="text-sm font-semibold text-cyan-400">{value}%</span>
+                    </div>
+                    <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full transition-all duration-500" style={{ width: `${value}%` }} />
+                    </div>
+                </div>
+            );
+        };
+        
+        const AtelierCard = ({ name, data }) => {
+            const isActive = data.status === 'active';
+            return (
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-700 p-6">
+                    <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-lg font-bold">{name}</h3>
+                        <div className={`w-3 h-3 rounded-full ${isActive ? 'bg-green-500' : 'bg-red-500'} animate-pulse`} />
+                    </div>
+                    <div className="space-y-2 text-sm">
+                        {Object.entries(data.metrics || {}).map(([key, value]) => (
+                            <div key={key} className="flex justify-between">
+                                <span className="text-slate-400">{key}:</span>
+                                <span className="text-cyan-400 font-semibold">{value}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            );
+        };
+        
+        // Render
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<SOCDashboard />);
+        
+        // Init Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
